@@ -1,17 +1,30 @@
-const searchButton = () => {
 const searchInput = document.getElementById('search-input');
+const searchButton = () => {
 const searchText = searchInput.value;
 searchInput.value = '';
+document.getElementById('cardDrink').innerHTML = '';
+const errorMess = document.getElementById('errorSearch');
+
+if(searchText === ''){
+    const err = document.createElement('h4');
+    errorMess.innerText = '';
+    err.classList = 'text-white , bg-dark , p-2 , text-center , rounded-3 , w-25 , d-inline-block , mt-5'
+    err.innerText = 'Please!! give a valid name';
+    errorMess.appendChild(err);
+    document.getElementById('cardDrink').innerHTML = '';
+}
+else{
+    errorMess.innerText = '';
 const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchText}`;
-    fetch(url)
-    .then(res => res.json())
-    .then(data => searchDrinks(data.drinks))
+fetch(url)
+.then(res => res.json())
+.then(data => searchDrinks(data.drinks))
 };
-// }
+};
 
 const searchDrinks = drinks => {
 const drinksCard = document.getElementById('cardDrink');
-    drinksCard.textContent = '';
+//     drinksCard.textContent = '';
     drinks.forEach(drink => {
     const eachDrinkCard = document.createElement('div');
 
