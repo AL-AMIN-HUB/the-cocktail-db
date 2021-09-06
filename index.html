@@ -1,65 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Cocktail DB</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <style>
-
-        body{
-           background-color: #230312;
-           height: 100vh;
-        }
-        .header-bg{
-            background-image: url(img/22-different-cocktails-garnishes.jpg);
-                background-position: top;
-                background-size: cover;
-                height: 400px;
-                padding: 30px;
-                margin-top: 50px;
-                }
+      body {
+        background-color: #230312;
+        height: 100vh;
+      }
+      .header-bg {
+        background-image: url(img/22-different-cocktails-garnishes.jpg);
+        background-position: top;
+        background-size: cover;
+        height: 400px;
+        padding: 30px;
+        margin-top: 50px;
+      }
     </style>
-</head>
-<body>
-   <header>
-       <h1 class="text-center mt-5 text-white">Welcome to TheCocktailDB</h1>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-center mt-5 text-white">Welcome to TheCocktailDB</h1>
 
-       <div class="header-bg">
-           <p class="lead text-center  w-25 text-white">An open, crowd-sourced database of drinks and cocktails from around the world.
-               We also offer a free JSON API for anyone wanting to use it.
-               If you like the site, please consider supporting us on Patreon by clicking the link below...</p><br>
-               <a class="text-decoration-none ms-5 text-info" target="_blank" href="https://www.patreon.com/thedatadb">Click to Support: Currently 650 supporters</a>
-       </div>
-   </header>
+      <div class="header-bg">
+        <p class="lead text-center w-25 text-white">
+          An open, crowd-sourced database of drinks and cocktails from around the world. We also offer a free JSON API for anyone wanting to use it.
+          If you like the site, please consider supporting us on Patreon by clicking the link below...
+        </p>
+        <br />
+        <a class="text-decoration-none ms-5 text-info" target="_blank" href="https://www.patreon.com/thedatadb"
+          >Click to Support: Currently 650 supporters</a
+        >
+      </div>
+    </header>
 
-   <main>
-       <section>
-          <div class="container input-group mb-3  w-25  mt-5">
-              <input id="search-input" type="text" class="form-control" placeholder="Search for a cocktail...."
-                  aria-label="Recipient's username" aria-describedby="basic-addon2">
-              <button onclick="searchBtn()" class="input-group-text btn btn-info" id="basic-addon2">Search</button>
-          </div>
-       </section>
+    <main>
+      <section>
+        <div class="container input-group mb-3 w-25 mt-5">
+          <input
+            id="search-input"
+            type="text"
+            class="form-control"
+            placeholder="Search for a cocktail ...."
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+          />
+          <button class="input-group-text btn btn-info" id="basic-addon2" onclick="searchButton()">Search</button>
+        </div>
 
-       <section class="container mt-5 pt-5">
-          <div id="cardDrink" class="row row-cols-1 row-cols-md-4 g-4">
-              <div class="col">
-                  <div class="card h-100">
-                      <img src="img/22-different-cocktails-garnishes.jpg" class="card-img-top img-fluid d-block" alt="...">
-                      <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                              additional content. This content is a little bit longer.</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-       </section>
-   </main>
+        <!-- <div id="errorSearch" class="text-center text-white"></div> -->
+      </section>
 
+      <section class="container mt-5 pt-5">
+        <div id="cardDrink" class="row row-cols-1 row-cols-md-4 g-4"></div>
+      </section>
+    </main>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
+
+<!-- // const errorSearch = document.getElementById('errorSearch');
+// errorSearch.innerText = '';
+// if(searchText === ''){
+//     const errorMsg = document.createElement('h4');
+//     errorMsg.classList = 'bg-danger , d-inline-block , p-2 , mt-5 , rounded-3 , shadow'
+//     errorMsg.innerText = 'Please! searchBox include valid name';
+//     errorSearch.appendChild(errorMsg); 
+// }
+
+// else{
+    // errorSearch.innerText = ''; -->
